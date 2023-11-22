@@ -14,6 +14,7 @@ end entity;
 architecture main of pwm is
 
     signal count: integer:= 0;
+    signal sigint: std_logic := '0';
 
 begin
 
@@ -21,9 +22,9 @@ begin
     begin
         if rising_edge(clk) then
             if count < duty then
-                sig <= '1';
+                sigint <= '1';
             else
-                sig <= '0';
+                sigint <= '0';
             end if;
             count <= count + 1;
             if count >= (period - 1) then
@@ -31,5 +32,7 @@ begin
             end if;
         end if;
     end process;
+
+    sig <= sigint;
 
 end architecture;
