@@ -16,8 +16,8 @@ architecture main of bclk is
 begin
     process(clk)
     begin
+        count <= count + 1;
         if clk'event and clk = '1' then
-            count <= count + 1;
             if count = period then
                 count <= 0;
                 clkint <= not clkint;
