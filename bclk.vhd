@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity bclk is
     port (
-        clk: in std_logic;
+        clkin: in std_logic;
         period: in integer;
         clkout: out std_logic
     );
@@ -14,10 +14,10 @@ architecture main of bclk is
     signal count: integer;
     signal clkint: std_logic;
 begin
-    process(clk)
+    process(clkin)
     begin
         count <= count + 1;
-        if clk'event and clk = '1' then
+        if rising_edge(clkin) then
             if count = period then
                 count <= 0;
                 clkint <= not clkint;
