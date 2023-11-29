@@ -4,17 +4,17 @@ use ieee.numeric_bit.all;
 
 entity pwm is
     port (
-        clk: in std_logic;
-        period: in integer;
-        duty: in integer;
-        sig: out std_logic
+        clk : in std_logic;
+        period : in integer;
+        duty : in integer;
+        sig : out std_logic
     );
 end entity;
 
 architecture main of pwm is
 
-    signal count: integer:= 0;
-    signal sigint: std_logic := '0';
+    signal count : integer := 0;
+    signal sigint : std_logic := '0';
 
 begin
 
