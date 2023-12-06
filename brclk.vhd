@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all;
 entity bclk is
     port (
         clkin : in std_logic;
-        reset : is std_logic;
+        reset : in std_logic;
         period : in integer;
         clkout : out std_logic
     );
