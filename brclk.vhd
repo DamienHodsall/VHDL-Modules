@@ -2,7 +2,7 @@ library ieee;
 use ieee.numeric_std.all;
 use ieee.std_logic_1164.all;
 
-entity bclk is
+entity brclk is
     port (
         clkin : in std_logic;
         reset : in std_logic;
@@ -11,7 +11,7 @@ entity bclk is
     );
 end entity;
 
-architecture main of bclk is
+architecture main of brclk is
     signal count : integer;
     signal clkint : std_logic;
 begin
